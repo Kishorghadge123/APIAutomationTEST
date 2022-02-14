@@ -1,0 +1,25 @@
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class GET_Request {
+	@Test
+	void getdetails()
+	{
+		RestAssured.baseURI= "http://restapi.demoapi.demoqa.com/utilities/weather/city/";
+		
+		RequestSpecification httprequest= RestAssured.given();
+		
+		Response response= httprequest.request(Method.GET,"/PUNE");
+		
+		//json response need store in string to display in output
+		
+		String responsebody= response.getBody().asString();
+		
+		System.out.println()"Response Body"+responsebody);
+	}
+	
+}

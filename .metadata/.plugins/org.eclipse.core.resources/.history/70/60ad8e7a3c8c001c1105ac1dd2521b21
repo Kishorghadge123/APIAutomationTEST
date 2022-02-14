@@ -1,0 +1,4 @@
+
+public class POST_Request extends GET_Request {
+
+}

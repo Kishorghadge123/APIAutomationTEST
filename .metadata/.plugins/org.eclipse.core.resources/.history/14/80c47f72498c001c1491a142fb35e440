@@ -1,0 +1,44 @@
+import static org.testng.Assert.assertEquals;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class GET_Request {
+	
+	@Test
+	void getdetails()
+	{
+		RestAssured.baseURI= "https://www.google.com/";
+		
+		RequestSpecification httprequest= RestAssured.given();
+		
+		Response response= httprequest.request(Method.GET);
+		
+		//JSON response need be store in string to display in output	
+		
+		String responsebody= response.getBody().asString();
+		
+		System.out.println("Response Body is :"+responsebody);
+		
+		int statuscode= response.getStatusCode();
+		
+		System.out.println("Status code:"+statuscode);
+		
+		Assert.assertEquals(statuscode, 200);
+		
+		String statusLine= response.getStatusLine();
+		
+		System.out.println("StatusLine :"+statusLine);
+		
+		Assert.assertEquals(statusLine, "HTTP/1.1 200 OK");
+		
+		
+		
+	}
+	
+}

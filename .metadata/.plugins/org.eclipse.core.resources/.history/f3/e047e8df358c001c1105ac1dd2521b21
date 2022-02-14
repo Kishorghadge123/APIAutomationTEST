@@ -1,0 +1,26 @@
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class GET_Request {
+	
+	@Test
+	void getdetails()
+	{
+		RestAssured.baseURI= "https://www.google.com/";
+		
+		RequestSpecification httprequest= RestAssured.given();
+		
+		Response response= httprequest.request(Method.GET);
+		
+		//JSON response need be store in string to display in output	
+		
+		String responsebody= response.getBody().asString();
+		
+		System.out.println("Response Body is :"+responsebody);
+	}
+	
+}

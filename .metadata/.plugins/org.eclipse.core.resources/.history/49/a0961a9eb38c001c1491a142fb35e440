@@ -1,0 +1,70 @@
+import java.nio.charset.Charset;
+import java.util.Random;
+
+import org.json.simple.JSONObject;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.authentication.PreemptiveBasicAuthScheme;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class POST_Request {
+	
+	
+	@Test
+	void PostData() {
+		RestAssured.baseURI = "https://gorest.co.in/public/v2";
+		
+		
+		
+		RequestSpecification httprequest= RestAssured.given();
+		
+		JSONObject requestparam = new JSONObject();
+		
+		byte[] array = new byte[3]; // length is bounded by 7
+	    new Random().nextBytes(array);
+	    String generatedString = new String(array, Charset.forName("UTF-8"));
+		
+		requestparam.put("name", "John"+generatedString);
+		requestparam.put("gender", "male");
+		requestparam.put("email","John137@test.com");
+		requestparam.put("status", "active");
+		
+		
+		httprequest.header("Content-Type","application/json");
+		httprequest.header("Accept","application/json");
+		httprequest.header("Authorization","Bearer 081212141c774e2163765bff6ce62d1159b19fa72803c683d8562068ef2ce9fc");
+		
+		//pass paramter to request
+		httprequest.body(requestparam.toJSONString());
+		
+		Response response=httprequest.request(Method.POST,"/users");
+		
+		String responsebody= response.getBody().asString();
+		
+		System.out.println("Response Body is :"+responsebody);
+		
+        int statuscode= response.getStatusCode();
+		
+		System.out.println("Status code:"+statuscode);
+		
+		Assert.assertEquals(statuscode, 201);
+		
+		//read response from json response
+	//	String successcode= response.jsonPath().get("SuccessCode");
+		
+	//	Assert.assertEquals(successcode, "OPRATION SUCCESS");
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+}

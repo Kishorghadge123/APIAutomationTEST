@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/Kishorghadge123/APIAutomationTEST.git"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="Kishor Ghadge &lt;kishor.ghadge@neutrinotechsystems.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="Kishor Ghadge &lt;kishor.ghadge@neutrinotechsystems.com&gt;"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\kisho\git\APIAutomationTEST\.git">
+			<item value="false"/>
+			<item value="Kishor Ghadge &lt;kishor.ghadge@neutrinotechsystems.com&gt;"/>
+			<item value="Commited1234"/>
+			<item value="Kishor Ghadge &lt;kishor.ghadge@neutrinotechsystems.com&gt;"/>
+			<item value="8c1f24a13096874213f1eca5061dadfb56d9179a"/>
+			<item value="0"/>
+			<item value="false"/>
+		</list>
+	</section>
+</section>
